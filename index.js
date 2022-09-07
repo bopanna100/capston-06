@@ -7,7 +7,7 @@ dotenv.config();
 console.log(process.env.MONGO_URL);
 const app = express();
 
-const port=3000;
+const port=process.env.port;
 
 const MONGO_URL= process.env.MONGO_URL;
 
