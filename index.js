@@ -72,5 +72,20 @@ app.delete("/products/:id", async function (request,response){
   : response.status(404).send({msg:"product not found"});
 });
 
+app.put("/products/:id", async function (request,response){
+  const{id}=request.params;
+  console.log(request.params,id);
+ const data=request.body;
+  
+  const result=await clint
+  .db("product36")
+  .collection("product")
+  .updateOne({id:id},{$set:data});
+
+  result.modifiedCount >0
+  ? response.send({msg:"product successfuly updated"}) 
+  : response.status(400).send({msg:"product not updated"});
+});
+
 
 app.listen(port,()=>console.log(`app is started in ${port}`));
