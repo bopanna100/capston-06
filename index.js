@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log(process.env.MONGO_URL);
+// console.log(process.env.MONGO_URL);
 const app = express();
 
-const port=process.env.port;
+const port=process.env.port||3000;
 
 const MONGO_URL= process.env.MONGO_URL;
 
