@@ -7,7 +7,7 @@ dotenv.config();
 // console.log(process.env.MONGO_URL);
 const app = express();
 
-const port=process.env.port||3000;
+const PORT=process.env.PORT||5000;
 
 const MONGO_URL= process.env.MONGO_URL;
 
@@ -90,4 +90,4 @@ app.put("/products/:id", async function (request,response){
 });
 
 
-app.listen(port,()=>console.log(`app is started in ${port}`));
+app.listen(PORT || 5000,()=>console.log(`app is started in ${PORT}`));
