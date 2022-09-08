@@ -21,7 +21,9 @@ return clint;
 const clint = await createconnection();
 
 app.use(express.json());
-
+app.get("/", (req, res) =>
+  res.send(`Server Running`)
+);
 
 app.get("/products",async function(request,response){
     
